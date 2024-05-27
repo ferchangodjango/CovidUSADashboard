@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>Welcome to home</h1>
+
+    <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+    <input type="value" id="ID" name="ID" placeholder="ID">
+    <input type="text" id="FIRSTNAME" name="FIRSTNAME" placeholder="FIRSTNAME">
+    <input type="text" id="LASTNAME" name="LASTNAME" placeholder="LASTNAME">
+    <input type="value" id="FEET" name="FEET" placeholder="FEET">
+    <input type="value" id="COMMISION" name="COMMISION" placeholder="COMMISION">
+    <input type="value" id="IDT" name="IDT" placeholder="IDT">
+    <input type="value" id="IDF" name="IDF" placeholder="IDF">
+
+    <button href="#" onclick="SendValuesInsert('{{csrf_token()}}')">Asustate</button>
+    
+
+    <a class="btn btn-primary" href="{{url_for('logout')}}"> LogOut</a>
+
+
+    <script src="{{url_for('static',filename='js/home.js')}}"></script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
+{% endblock %}
+
+{% block body %}
+    <h1> Welcome to the home</h1>
+
+    <form action='home' method="POST">
+            <!--<img class="mb-4" src="{{url_for('static',filename='img/login.svg')}}" alt="" width="300" height="100">-->
+        <h1 class="h3 mb-3 fw-normal">Please insert the new employeed</h1>
+
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        
+
+        <div class="form-floating">
+            <input type="text" class="form-control" id="FIRSTNAME" name="FIRSTNAME" placeholder="FIRSTNAME">
+            <label for="floatingInput">FIRSTNAME</label>
+        </div>
+        
+        <div class="form-floating">
+            <input type="text" class="form-control" id="LASTNAME" name="LASTNAME" placeholder="LASTNAME">
+            <label for="floatingInput">LASTNAME</label>
+        </div>
+
+        <div class="form-floating">
+            <input type="value" class="form-control" id="FEET" name="FEET" placeholder="FEET">
+            <label for="floatingInput">FEET</label>
+        </div>
+
+        <div class="form-floating">
+            <input type="value" class="form-control" id="COMMISION" name="COMMISION" placeholder="COMMISION">
+            <label for="floatingInput">COMMISION</label>
+        </div>
+
+        <div class="form-floating">
+            <input type="value" class="form-control" id="IDT" name="IDT" placeholder="IDT">
+            <label for="floatingInput">IDT</label>
+        </div>
+
+        <div class="form-floating">
+            <input type="value" class="form-control" id="IDF" name="IDF" placeholder="IDF">
+            <label for="floatingInput">IDF</label>
+        </div>
+
+        <button href="#" onclick="SendValuesInsert('{{csrf_token()}}')">Asustate</button>
+
+    </form>
+
+    <a class="btn btn-primary" href="{{url_for('logout')}}"> LogOut</a>
+
+{% endblock %}
+
+{% block js %}
+<script src="{{url_for('static',filename='js/home.js')}}"></script>
+{% endblock %}

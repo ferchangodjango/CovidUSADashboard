@@ -1,0 +1,4 @@
+Un requerimiento del cliente es realizar 
+la tabla con los colores, pero el valor 
+inicial de la tabla debe de ser dado por
+la API en todo momento.(Cumplido)

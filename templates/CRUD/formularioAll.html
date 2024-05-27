@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
+{% endblock %}
+
+{% block body %}
+    
+    {% from './macro.html' import render_field %}
+    <main class="form-signin w-100 m-auto">
+        <form action='home' method="POST">
+                <!--<img class="mb-4" src="{{url_for('static',filename='img/login.svg')}}" alt="" width="300" height="100">-->
+            <h1 class="h3 mb-3 fw-normal">Please insert the new employeed</h1>
+
+            <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+            
+
+            <div class="form-floating">
+                {{render_field(form.FIRSTNAME,class='form-control',id='FIRSTNAME',placeholder='FIRSTNAME')}}
+            </div>
+            
+            <div class="form-floating">
+                {{render_field(form.LASTNAME,class='form-control',id='LASTNAME',placeholder='LASTNAME')}}
+            </div>
+
+            <div class="form-floating">
+                {{render_field(form.FEET,class='form-control',id='FEET',placeholder='FEET')}}
+            </div>
+
+            <div class="form-floating">
+                {{render_field(form.COMMISION,class='form-control',id='COMMISION',placeholder='COMMISION')}}
+            </div>
+
+            <div class="form-floating">
+                {{render_field(form.IDTIENDA,class='form-control',id='IDT',placeholder='IDTIENDA')}}
+            </div>
+
+            <div class="form-floating">
+                {{render_field(form.IDF,class='form-control',id='IDF',placeholder='IDF')}}
+            </div>
+
+            <button href="#" onclick="SendValuesInsert('{{csrf_token()}}')">enviar datos</button>
+            <button href="#" onclick="DeleteValuesSend('{{csrf_token()}}')">Borrar usuario</button>
+            <a href="{{url_for('logout')}}" >LogOut</a>
+            
+
+        </form>
+        
+    </main>
+    
+
+{% endblock %}
+
+{% block js %}
+<script src="{{url_for('static',filename='js/home.js')}}"></script>
+{% endblock %}

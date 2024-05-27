@@ -1,0 +1,40 @@
+{% extends './layout.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/table.css')}}">
+{% endblock %}
+
+{% block body %}
+    <table class="firstTable">
+
+        <tr> <!--table row(tr)-->
+            <td>Venta Tienda El pato</td>  <!--Table data-->
+            <td>Venta Tienda El cocodrilo</td>
+            <td>Venta Tienda La borrega</td>
+        </tr>
+        
+        <tr> <!--table row(tr)-->
+            <td >08:00:00</td> <!--Table data-->
+            <td class="ganancia"></td>
+            <td class="ganancia"></td>
+        </tr>
+
+        <tr> <!--table row(tr)-->
+            <td >09:00:00</td> <!--Table data-->
+            <td class="ganancia"></td>
+            <td class="ganancia"></td>
+        </tr>
+
+        <tr> <!--table row(tr)-->
+            <td >10:00:00</td> <!--Table data-->
+            <td class="ganancia"></td>
+            <td class="ganancia"></td>
+        </tr>
+
+    </table>
+    <button href="#" onclick="VentasGet()">GetVentas</button>
+{% endblock %}
+
+{% block js %}
+    <script src="{{url_for('static',filename='js/tableOptimized.js')}}"></script>
+{% endblock %}

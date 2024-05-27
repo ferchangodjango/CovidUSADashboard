@@ -1,0 +1,58 @@
+{% extends './layout.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/grid.css')}}">
+{% endblock %}
+
+{% block bokeh_resource %}
+<!-- Maph graph USA-->
+{{data.script1|indent(4)|safe}}
+{{data.js_resources1|indent(4)|safe}}
+{{data.css_resources1|indent(4)|safe}}
+
+<!-- Maph graph Alaska-->
+{{data.script2|indent(4)|safe}}
+{{data.js_resources2|indent(4)|safe}}
+{{data.css_resources2|indent(4)|safe}}
+
+<!-- Time serie-->
+{{data.script3|indent(4)|safe}}
+{{data.js_resources3|indent(4)|safe}}
+{{data.css_resources3|indent(4)|safe}}
+
+<!-- Dinamic Pareto-->
+{{data.script4|indent(4)|safe}}
+{{data.js_resources4|indent(4)|safe}}
+{{data.css_resources4|indent(4)|safe}}
+
+{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+    
+    <div class="row mb-3 text-center">
+        <div class="pb-3">
+          <h1> Main Dashboard Covid </h1>
+        </div>
+
+    <div class="row mb-3 text-center">
+        <!--Maph graph-->
+        <div class="col-md-8 themed-grid-col">{{data.div1|indent(4)|safe}}</div>
+        
+        <div class="col-6 col-md-4 themed-grid-col">{{data.div2|indent(4)|safe}}</div>
+        
+    </div>
+
+    <div class="row mb-3 text-center">
+        <!-- Time serie-->
+        <div class="col-6 themed-grid-col"> {{data.div3|indent(4)|safe}} </div>
+        <!-- Dinamic Pareto-->
+        <div class="col-6 themed-grid-col"> {{data.div4|indent(4)|safe}} </div>
+        
+    </div>
+
+</div>
+
+{% endblock %}
